@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="cv, yazılım, barış, developer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>CV Hazırlama Aracı</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div id="baslik" class="text-center border-1">CV HAZIRLAMA ARACI</div>
+    <div class="app-container">
+      <!--  SOL PANEL  -->
+      <div class="panel panel-left">
+        <h2 class="panel-baslik">Metin İçerikleri</h2>
+
+        <div class="section-group">
+          <h3>İsim Kutusu</h3>
+          <div class="form-row">
+            <label>Ad Soyad :</label>
+            <input type="text" onkeypress="isimdegeri()" id="adSoyad" />
+          </div>
+          <div class="form-row">
+            <label>Ünvan :</label>
+            <input type="text" id="unvan" onkeypress="unvandegeri()" />
+          </div>
+        </div>
+
+        <div class="section-group">
+          <h3>İletişim Bilgileri</h3>
+          <div class="form-row">
+            <label>Telefon :</label>
+            <input type="tel" id="telefon" onkeypress="telefondegeri()" />
+          </div>
+          <div class="form-row">
+            <label>Mail :</label>
+            <input type="email" id="mail" oninput="maildegeri()" />
+          </div>
+          <div class="form-row">
+            <label>Web :</label>
+            <input type="url" id="web" oninput="webdegeri()" />
+          </div>
+          <div class="form-row">
+            <label>Adres :</label>
+            <textarea rows="2" id="adres" onkeypress="adresdegeri()"></textarea>
+          </div>
+        </div>
+
+        <!-- Eğitim Bilgileri -->
+        <div class="section-group">
+          <h3>Eğitim Bilgileri</h3>
+
+          <!-- Açıklama alanı -->
+          <div class="form-row">
+            <label>Açıklama :</label>
+            <textarea rows="3" id="egitim" oninput="egitimBilgisi()"></textarea>
+          </div>
+
+          <!-- Okul sayısı -->
+          <div class="form-row">
+            <label>Okul Sayısı :</label>
+            <select id="okulSayisi" onchange="okulGir()">
+              <option value="0">Seçiniz</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+
+          <div id="okulInputu"></div>
+        </div>
+
+        <!-- Yetenekler -->
+        <div class="section-group">
+          <h3>Yetenekler</h3>
+
+          <!-- Açıklama alanı -->
+          <div class="form-row">
+            <label>Açıklama :</label>
+            <textarea
+              rows="3"
+              id="yetenekAciklama"
+              oninput="yetenekAciklamasi()"
+            ></textarea>
+          </div>
+
+          <!-- Yetenek sayısı -->
+          <div class="form-row">
+            <label>Yetenek Sayısı :</label>
+            <select id="yetenekSayisi" onchange="yetenekGir()">
+              <option value="0">Seçiniz</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+
+          <div id="yetenekInputu"></div>
+        </div>
+
+        <div class="section-group">
+          <h3>Hakkımda</h3>
+          <div class="form-row">
+            <label>Açıklama :</label>
+            <textarea rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="section-group">
+          <h3>İş Deneyimi</h3>
+          <div class="form-row">
+            <label>Açıklama :</label>
+            <textarea rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORTA PANEL  -->
+      <div class="panel panel-middle">
+        <h2 class="panel-baslik">Görünüş</h2>
+
+        <div class="section-group">
+          <h3>Renkler</h3>
+          <div class="color-row">
+            <label>Arkaplan Rengi :</label>
+            <input type="color" value="#b30000" />
+          </div>
+          <div class="color-row">
+            <label>Sol Kolon Rengi :</label>
+            <input type="color" value="#b30000" />
+          </div>
+          <div class="color-row">
+            <label>İsim Kutusu Rengi :</label>
+            <input type="color" value="#333333" />
+          </div>
+          <div class="color-row">
+            <label>İsim Kutusu Yazı Rengi :</label>
+            <input type="color" value="#ffffff" />
+          </div>
+        </div>
+
+        <div class="section-group">
+          <h3>Yazı Tipi</h3>
+          <div class="form-row">
+            <label>Yazı Tipi :</label>
+            <select>
+              <option>Seçiniz</option>
+              <option>Arial</option>
+              <option>Times New Roman</option>
+              <option>Courier New</option>
+              <option>Verdana</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section-group">
+          <h3>Fotoğraf</h3>
+          <div class="form-row">
+            <label>Çerçeve Şekli :</label>
+            <select>
+              <option>Seçiniz</option>
+              <option>Daire</option>
+              <option>Kare</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section-group">
+          <h3>Başlık Altı Çizgileri</h3>
+          <div class="color-row">
+            <label>Çizgi Rengi :</label>
+            <input type="color" value="#000000" />
+          </div>
+          <div class="form-row">
+            <label>Çizgi Şekli :</label>
+            <select>
+              <option>Seçiniz</option>
+              <option>Düz</option>
+              <option>Kesikli</option>
+              <option>Noktalı</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-right">
+        <div class="cv-preview">
+          <!-- SOL SÜTUN -->
+          <div class="solKolon">
+            <div class="foto"></div>
+
+            <div class="solKutu">
+              <div class="solBaslik">İLETİŞİM</div>
+              <div class="solCizgi"></div>
+              <div class="solIcerik">
+                <div class="solSatir">
+                  <span class="solIkon"><i class="fa-solid fa-phone"></i></span>
+                  <span class="solYazi" id="cv-phone">{ Telefon }</span>
+                </div>
+                <div class="solSatir">
+                  <span class="solIkon"
+                    ><i class="fa-solid fa-envelope"></i
+                  ></span>
+                  <span class="solYazi" id="cv-mail">{ Mail }</span>
+                </div>
+
+                <div class="solSatir">
+                  <span class="solIkon"><i class="fa-solid fa-globe"></i></span>
+                  <span class="solYazi" id="cv-web">{ Web }</span>
+                </div>
+                <div class="solSatir" id="cv-address">
+                  <span class="solIkon"
+                    ><i class="fa-solid fa-location-dot"></i
+                  ></span>
+                  <span class="solYazi">{ Adres }</span>
+                </div>
+                <div class="solSatir" id="cv-web">
+                  <span class="solIkon"><i class="fa-solid fa-globe"></i></span>
+                  <span class="solYazi">{ Web }</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="solKutu">
+              <div class="solBaslik">EĞİTİM</div>
+              <div class="solCizgi"></div>
+              <div class="solIcerik">
+                <div class="placeholder-text" id="cv-education">
+                  { AÇIKLAMA }
+                </div>
+              </div>
+            </div>
+
+            <div class="solKutu">
+              <div class="solBaslik">YETENEKLER</div>
+              <div class="solCizgi"></div>
+              <div class="solIcerik">
+                <div class="placeholder-text" id="cv-skills">{ AÇIKLAMA }</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SAĞ SÜTUN -->
+          <div class="sagKolon">
+            <div class="isimKutusu">
+              <div class="isim" id="cv-name">{ AD SOYAD }</div>
+              <div class="cizgi"></div>
+              <div class="unvan" id="cv-title">{ UNVAN }</div>
+            </div>
+
+            <div class="kutu">
+              <div class="baslik">HAKKIMDA</div>
+              <div class="icerik">
+                <p id="cv-about">{ AÇIKLAMA }</p>
+              </div>
+            </div>
+
+            <div class="kutu">
+              <div class="baslik">İŞ DENEYİMİ</div>
+              <div class="icerik">
+                <p id="cv-experience">{ AÇIKLAMA }</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
