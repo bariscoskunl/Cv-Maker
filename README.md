@@ -13,3 +13,11 @@ Kullanıcıların kendi profesyonel özgeçmişlerini anlık olarak tasarlayabil
 ## 🛠️ Kurulum
 1. Klasörü indirin.
 2. \`index.html\` dosyasını tarayıcıda açın.
+
+## 📬 İletişim
+
+Herhangi bir sorunuz, öneriniz veya iş birliği fırsatınız varsa benimle iletişime geçebilirsiniz.
+
+- Email: bariscoskun441@gmail.com
+- GitHub: https://github.com/bariscoskunl
+- LinkedIn: https://www.linkedin.com/in/bariscoskun441
